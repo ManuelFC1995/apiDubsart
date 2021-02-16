@@ -37,12 +37,7 @@ public class PublicationServiceController {
         return new ResponseEntity<Publicacion>(entity, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @GetMapping("/search/pub/{id}")
-    public ResponseEntity<List<Publicacion>> getPubByUser(@PathVariable("id_usuario") int id) {
-        List<Publicacion> list = service.getPubByUser(id);
 
-        return new ResponseEntity<List<Publicacion>>(list, new HttpHeaders(), HttpStatus.OK);
-    }
 
     @PostMapping
     public ResponseEntity<Publicacion> createPublication(@Valid @RequestBody Publicacion myItem){
